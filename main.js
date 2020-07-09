@@ -13,11 +13,7 @@ function loadPokemontList(pokemonList) {
     .then((pokemonList) => pokemonList.json())
     .then((pokemonList) => {
       pokemonList.results.forEach((result) => {
-        let li = document.createElement("li");
-        li.innerHTML = `<li>${result.name}</li>`;
-        $list.appendChild(li);
-        $list.style.cursor = "pointer";
-        console.log(result.url);
+      createList(result);
       });
     });
   $list.addEventListener("click", function (event) {
@@ -90,4 +86,12 @@ function formatActiveElement(pokemon) {
     allLiElements[i].className = "";
   }
   pokemon.className = "active";
+}
+
+function createList(result){
+  let li = document.createElement("li");
+  li.innerHTML = `<li>${result.name}</li>`;
+  $list.appendChild(li);
+  $list.style.cursor = "pointer";
+  console.log(result.url);
 }
