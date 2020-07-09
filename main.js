@@ -15,15 +15,14 @@ function loadPokemontList(pokemonList) {
       data.results.forEach((result) => {
         let li = document.createElement("li");
         li.innerHTML = `<li>${result.name}</li>`;
-        li.className = "no border ";
         $list.appendChild(li);
         console.log(result.url);
       });
     });
   $list.addEventListener("click", function (event) {
     let pokemon = event.target;
-    console.log(pokemon); 
-    pokemon.className="active"
+    console.log(pokemon);
+    formatActiveElement(pokemon)
     loadSinglePokemon(pokemon);
   });
 }
@@ -82,3 +81,12 @@ $previousButton.onclick = function () {
     `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`
   );
 };
+
+function formatActiveElement(pokemon){
+  var allLiElements = document.getElementsByTagName("li");
+  for (i = 0; i < allLiElements.length; i++) {
+    //it does work
+    allLiElements[i].className = "";
+  }
+  pokemon.className = "active";
+}
