@@ -1,0 +1,24 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "Pokedex for R/argentinaPrograma",
+  "main": "index.html",
+  "scripts": {
+    "start":"http-server",
+    "cypress-open": "cypress open",
+    "cypress-run": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinraul/Pokedex.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martinraul/Pokedex/issues"
+  },
+  "homepage": "https://github.com/martinraul/Pokedex#readme",
+  "devDependencies": {
+    "cypress": "^4.10.0"
+  }
+}
