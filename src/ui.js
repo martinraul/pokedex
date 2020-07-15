@@ -12,7 +12,7 @@ export function formatActiveElement(pokemon) {
 
 export function createList(result) {
   let li = document.createElement("li");
-  li.innerHTML = `<li>${result.name}</li>`;
+  li.innerHTML = `${result.name}`;
   $list.appendChild(li);
   $list.style.cursor = "pointer";
 }

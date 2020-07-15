@@ -1,4 +1,4 @@
-const URL = "http://192.168.0.102:8080/";
+const URL = "http://192.168.0.100:8080/";
 const container = "[data-cy=container]";
 
 context("Pokedex", () => {
@@ -11,7 +11,7 @@ context("Pokedex", () => {
       cy.get(container).find("h1").should("have.length", 1);
     });
     it("makes sure List is ok", () => {
-      cy.get(container).find("li").should("have.length", 40);
+      cy.get(container).find("li").should("have.length", 20);
     });
     it("makes sure there div to show the pokemon selected", () => {
       cy.get(container).find("#showPokemon").should("have.length", 1);
@@ -21,20 +21,20 @@ context("Pokedex", () => {
     });
     it("makes sure buttons work", () => {
       cy.get("#next-button").click();
-      cy.get(container).find("li").should("have.length", 40);
+      cy.get(container).find("li").should("have.length", 20);
       cy.get("#previous-button").click();
-      cy.get(container).find("li").should("have.length", 40);
+      cy.get(container).find("li").should("have.length", 20);
     });
   });
 
   describe("Select and pokemon and show it", () => {
     it("Select and click, Pokemon should be visible", () => {
-      cy.get("#list > li:nth-child(3) > li").click();
+      cy.get("#list > li:nth-child(3)").click();
       cy.contains("VENUSAUR").should("be.visible");
       cy.contains("GRASS").should("be.visible");
     });
     it("Select and click again, Pokemon should be visible", () => {
-      cy.get("#list > li:nth-child(4) > li").click();
+      cy.get("#list > li:nth-child(4)").click();
       cy.contains("CHARMANDER").should("be.visible");
       cy.contains("FIRE").should("be.visible");
     });
