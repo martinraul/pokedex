@@ -4,7 +4,7 @@
   "description": "Pokedex for R/argentinaPrograma",
   "main": "index.html",
   "scripts": {
-    "start":"http-server",
+    "start": "http-server",
     "cypress-open": "cypress open",
     "cypress-run": "cypress run"
   },
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/martinraul/Pokedex#readme",
   "devDependencies": {
-    "cypress": "^4.10.0"
+    "cypress": "^4.10.0",
+    "eslint": "^7.4.0"
   }
 }

@@ -1,5 +1,7 @@
 export const $list = document.querySelector("#list");
 export let pokemonList = `https://pokeapi.co/api/v2/pokemon?offset=0&limit20`;
+import {$showPokemon} from "./ui.js"
+
 const $nextButton = document.getElementById("next-button");
 const $previousButton = document.getElementById("previous-button");
 let offset = 0;
@@ -69,14 +71,14 @@ function savePokemonInStorage(pokemon) {
   }
 }
 
-$nextButton.onclick = function () {
+$nextButton.onclick = function (list) {
   offset += 20;
   list.innerHTML = "";
   pokemonList = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`;
   loadPokemontList(pokemonList);
 };
 
-$previousButton.onclick = function () {
+$previousButton.onclick = function (list) {
   offset -= 20;
   list.innerHTML = "";
   pokemonList = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`;

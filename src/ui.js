@@ -1,5 +1,5 @@
 import { $list } from "./getApiData.js";
-const $showPokemon = document.querySelector("#showPokemon");
+export const $showPokemon = document.querySelector("#showPokemon");
 
 export function formatActiveElement(pokemon) {
   var allLiElements = document.getElementsByTagName("li");
