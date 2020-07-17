@@ -1,5 +1,12 @@
-import { $list } from "./getApiData.js";
+import {
+  $list,
+  retrieveNextPageList,
+  retrievePrevPageList,
+  loadPokemontList,
+} from "./getApiData.js";
+
 export const $showPokemon = document.querySelector("#showPokemon");
+
 
 export function formatActiveElement(pokemon) {
   var allLiElements = document.getElementsByTagName("li");
@@ -42,3 +49,12 @@ export function createPokemonCard(pokemon) {
   $showPokemon.appendChild(picSpan);
 }
 
+document.getElementById("next-button").onclick = async function () {
+  await retrieveNextPageList();
+  await loadPokemontList();
+};
+
+document.getElementById("previous-button").onclick = async function () {
+  await retrievePrevPageList();
+  await loadPokemontList();
+};

@@ -1,4 +1,9 @@
 
-import { loadPokemontList } from "./getApiData.js"; 
+import { loadPokemontList,selectPokemon } from "./getApiData.js"; 
 
-loadPokemontList();
+async function initialize(){
+await loadPokemontList();
+selectPokemon();
+}
+
+initialize()

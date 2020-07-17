@@ -1,15 +1,8 @@
 export const $list = document.querySelector("#list");
-export let pokemonList = `https://pokeapi.co/api/v2/pokemon?offset=0&limit20`;
-import {$showPokemon} from "./ui.js"
-
-const $nextButton = document.getElementById("next-button");
-const $previousButton = document.getElementById("previous-button");
+import { $showPokemon, createList, formatActiveElement, createPokemonCard } from "./ui.js";
+import { loadStoragePokemon, savePokemonInStorage } from "./storage.js";
+let pokemonList = `https://pokeapi.co/api/v2/pokemon?offset=0&limit20`;
 let offset = 0;
-selectPokemon();
-
-import { createList } from "./ui.js";
-import { formatActiveElement } from "./ui.js";
-import { createPokemonCard } from "./ui.js";
 
 export function loadPokemontList() {
   fetch(pokemonList)
@@ -21,23 +14,23 @@ export function loadPokemontList() {
     });
 }
 
-function selectPokemon() {
+export function selectPokemon() {
   $list.addEventListener("click", function (event) {
     let pokemon = event.target;
     formatActiveElement(pokemon);
     loadPokemon(pokemon);
   });
+}
 
-  function loadPokemon(pokemon) {
-    try {
-      pokemon = pokemon.textContent;
-      loadStoragePokemon(pokemon);
-      createPokemonCard(pokemon);
-    } catch (error) {
-      loadApiPokemon(pokemon);
-      savePokemonInStorage(pokemon);
-      return pokemon;
-    }
+function loadPokemon(pokemon) {
+  try {
+    pokemon = pokemon.textContent;
+    loadStoragePokemon(pokemon);
+    createPokemonCard(pokemon);
+  } catch (error) {
+    loadApiPokemon(pokemon);
+    savePokemonInStorage(pokemon);
+    return pokemon;
   }
 }
 
@@ -54,33 +47,14 @@ function loadApiPokemon(pokemon) {
     });
 }
 
-function loadStoragePokemon(pokemon) {
-  pokemon = JSON.parse(window.localStorage.getItem(pokemon));
-  if (pokemon === null) {
-    throw new Error("Pokemon not in storage.");
-  }
-  return pokemon;
-}
-
-function savePokemonInStorage(pokemon) {
-  try {
-    localStorage.setItem(`${pokemon.name}`, JSON.stringify(pokemon));
-  } catch (error) {
-    localStorage.clear();
-    localStorage.setItem(`${pokemon.name}`, JSON.stringify(pokemon));
-  }
-}
-
-$nextButton.onclick = function (list) {
+export function retrieveNextPageList() {
   offset += 20;
-  list.innerHTML = "";
+  $list.innerHTML = "";
   pokemonList = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`;
-  loadPokemontList(pokemonList);
-};
+}
 
-$previousButton.onclick = function (list) {
+export function retrievePrevPageList() {
   offset -= 20;
-  list.innerHTML = "";
+  $list.innerHTML = "";
   pokemonList = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`;
-  loadPokemontList(pokemonList);
-};
+}
