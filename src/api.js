@@ -1,8 +1,9 @@
+let pokemonList = `https://pokeapi.co/api/v2/pokemon?offset=0&limit20`;
+let offset = 0;
+
 export const $list = document.querySelector("#list");
 import { $showPokemon, createList, formatActiveElement, createPokemonCard } from "./ui.js";
 import { loadStoragePokemon, savePokemonInStorage } from "./storage.js";
-let pokemonList = `https://pokeapi.co/api/v2/pokemon?offset=0&limit20`;
-let offset = 0;
 
 export function loadPokemontList() {
   fetch(pokemonList)

@@ -3,10 +3,9 @@ import {
   retrieveNextPageList,
   retrievePrevPageList,
   loadPokemontList,
-} from "./getApiData.js";
+} from "./api.js";
 
 export const $showPokemon = document.querySelector("#showPokemon");
-
 
 export function formatActiveElement(pokemon) {
   var allLiElements = document.getElementsByTagName("li");
