@@ -9,6 +9,22 @@ for r/argentinaPrograma
 * [Cypress.io](https://www.cypress.io/) - For testing
 * [Eslint](https://eslint.org/) - For code review
 
-# Working Link ----->> https://martinraul.github.io/Pokedex/
+## Working link⬇
+https://martinraul.github.io/Pokedex/
 
+
+## To do list
+- <del>Add LocalStorage for better performance<del>
+- Add search bar
+- Redesign with React
+- Adjust to mobile display
+
+## Acknowledgments
+* Hat tip to everyone at [r/argentinaPrograma](https://argentinaprograma.com/)
+* [Pokeapi](https://pokeapi.co/) 
+* etc
+
+## Screenshot
 ![Screenshot](https://i.imgur.com/4kYuWMG.png)
+
+
