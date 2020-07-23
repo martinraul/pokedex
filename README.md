@@ -1,5 +1,5 @@
 # Pokemon Selector
-for r/argentinaPrograma
+RESTFul API practice for r/argentinaPrograma
 
 ## Built with
 * Javascript
@@ -11,7 +11,6 @@ for r/argentinaPrograma
 
 ## Working link⬇
 https://martinraul.github.io/Pokedex/
-
 
 ## To do list
 - <del>Add LocalStorage for better performance<del>
