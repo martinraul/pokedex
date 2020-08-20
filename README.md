@@ -10,7 +10,7 @@ RESTFul API practice for r/argentinaPrograma
 * [Eslint](https://eslint.org/) - For code review
 
 ## Working link⬇
-https://martinraul.github.io/Pokedex/
+https://martinraul.github.io/pokedex/
 
 ## To do list
 - <del>Add LocalStorage for better performance<del>
