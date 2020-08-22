@@ -1,4 +1,4 @@
-let pokemonList = `https://pokeapi.co/api/v2/pokemon?offset=0&limit20`;
+let pokemonList = `https://pokeapi.co/api/v2/pokemon?offset=0&limit20/`;
 let offset = 0;
 
 export const $list = document.querySelector("#list");
